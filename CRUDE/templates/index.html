@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Estudante</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+</head>
+<body>
+<h1 style="text-align: center;">CRUD ESTUDANTES</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="/add">ADICIONAR</a>
+        </div>
+        <div class="col-xs-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>nome</th>
+                        <th>idade</th>
+                        <th>Acoes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for e in estudantes %}
+                <tr>
+                    <td>{{e.nome}}</td>
+                    <td>{{e.idade}}</td>
+                    <td>
+                        <a href="/edit/{{e.id}}">EDITAR</a> |
+                        <a href="/delete/{{e.id}}">EXCLUIR</a>
+                    </td>
+                </tr>
+                {% endfor %}    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>  
+</body>
+</html>
